@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:4173",
+  "result": "passed",
+  "independentContexts": 2,
+  "nativeCreateDelete": true,
+  "developmentHooksAbsent": true,
+  "developmentSyncControlsAbsent": true,
+  "pageErrors": [],
+  "externalHttpRequests": []
+}

@@ -1,0 +1,39 @@
+{
+  "name": "board-sync-spike",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "packageManager": "pnpm@9.6.0",
+  "scripts": {
+    "dev": "concurrently -k -n sync,web \"pnpm server\" \"pnpm web\"",
+    "server": "tsx server/index.ts",
+    "web": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "build": "pnpm typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "tsx --test --test-concurrency=1 tests/*.test.ts",
+    "test:browser": "playwright test",
+    "test:smoke": "tsx scripts/smoke.ts",
+    "reset": "tsx scripts/reset.ts"
+  },
+  "dependencies": {
+    "@excalidraw/excalidraw": "0.18.1",
+    "@hocuspocus/provider": "4.8.0",
+    "@hocuspocus/server": "4.8.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "yjs": "13.6.33"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "6.3.0",
+    "concurrently": "10.0.7",
+    "tsx": "4.23.15",
+    "typescript": "5.9.3",
+    "vite": "8.3.7"
+  }
+}
